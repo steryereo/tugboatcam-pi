@@ -1,0 +1,5 @@
+#!/bin/bash
+
+AWS_SHARED_CREDENTIALS_FILE="/home/pi/.aws/credentials" AWS_CONFIG_FILE="/home/pi/.aws/config" aws s3 cp $1 s3://tugboatcam/ &>> /var/log/motion/awsupload.log
+echo "removing $1" &>> /var/log/motion/awsupload.log
+rm $1 &>> /var/log/motion/awsupload.log
